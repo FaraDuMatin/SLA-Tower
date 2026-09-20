@@ -4,7 +4,7 @@ export function TicketCard({ ticket, now }) {
   return (
     <a className={`card ${ticket.bucket}`} href={ticket.jira_url} target="_blank" rel="noreferrer">
       <div className="card-top">
-        <span className="key">{ticket.jira_key}</span>
+        <span className="key">{ticket.jira_key || `#${ticket.id}`}</span>
         <span className="tag">{ticket.priority}</span>
         <span className="tag">{ticket.country}</span>
       </div>
