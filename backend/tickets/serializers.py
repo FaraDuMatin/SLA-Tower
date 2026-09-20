@@ -32,4 +32,6 @@ class TicketSerializer(serializers.ModelSerializer):
         return bucket(ticket)
 
     def get_jira_url(self, ticket):
+        if ticket.jira_key is None:
+            return None
         return settings.JIRA_BASE_URL + "/browse/" + ticket.jira_key
